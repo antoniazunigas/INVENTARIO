@@ -1,139 +1,175 @@
+/* productos.page.scss - Estilo Final Consistente */
+
+/* --- Configuración Global del Host --- */
 :host {
-  --ion-background-color: #f4f6f8;
-  font-family: 'Poppins', sans-serif;
+    --ion-background-color: #f4f6f8; /* Fondo muy claro */
+    font-family: 'Poppins', sans-serif;
 }
 
 
+/* === TOOLBAR PRINCIPAL === */
 ion-toolbar.main-toolbar {
-  --background: #ffffff;
-  --color: #86c3ff;
-  border-bottom: 1px solid #e0e0e0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    --background: #ffffff; /* Fondo blanco */
+    --color: #1f7ddc; /* Color de texto/elementos por defecto */
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* Título */
+ion-toolbar.main-toolbar ion-title.app-title-uppercase {
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #1282f1; /* Azul vibrante */
+    text-transform: uppercase;
+}
+
+/* Ícono de "Agregar" por defecto */
 ion-toolbar.main-toolbar ion-icon {
-  font-size: 1.6em;
-  color: #1f7ddc;
+    font-size: 1.6em;
+    color: #1f7ddc;
 }
 
-ion-toolbar.main-toolbar ion-title {
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #1282f1;
+
+/* === BOTÓN VOLVER (slot="start") === */
+ion-toolbar.main-toolbar ion-buttons[slot="start"] ion-button {
+    --background: #d6ebff; /* Fondo azul claro pastel */
+    --color: #1f7ddc; /* Color de texto/ícono azul oscuro */
+    border-radius: 20px; /* Estilo de pastilla */
+    padding: 0 14px;
+    height: 42px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+ion-toolbar.main-toolbar ion-buttons[slot="start"] ion-button:hover {
+    --background: #2281e0; /* Fondo azul oscuro al pasar el ratón */
+    --color: #ffffff; /* Texto blanco al pasar el ratón */
+    transform: scale(1.02);
+}
+
+ion-toolbar.main-toolbar ion-buttons[slot="start"] ion-icon {
+    font-size: 1.2em;
+    margin-right: 4px;
+}
+
+
+/* === BARRA DE BÚSQUEDA === */
 .search-toolbar {
-  --background: #f9fafb;
-  border-bottom: 1px solid #e8e8e8;
+    --background: #f9fafb;
+    border-bottom: 1px solid #e8e8e8;
 }
 
 ion-searchbar {
-  --background: #ffffff;
-  --border-radius: 10px;
-  --color: #2c3e50;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  margin: 0 10px;
+    --background: #ffffff;
+    --border-radius: 10px;
+    --color: #2c3e50;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    margin: 0 10px;
 }
 
-/* === SECCIÓN DE PRODUCTOS === */
+/* === SECCIÓN DE PRODUCTOS Y LISTA === */
 .section-title {
-  color: #34495e;
-  font-weight: 500;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  border-left: 4px solid #3498db;
-  padding-left: 15px;
+    color: #34495e;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #3498db; /* Línea de énfasis azul */
+    padding-left: 15px;
 }
 
 .product-card {
-  margin: 15px 10px;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+    margin: 15px 10px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .product-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .item-title {
-  color: #2980b9;
-  font-weight: 600;
-  font-size: 1.1em;
+    color: #2980b9;
+    font-weight: 600;
+    font-size: 1.1em;
 }
 
 .data-row p {
-  color: #555;
-  font-size: 0.95em;
-  margin: 0;
+    color: #555;
+    font-size: 0.95em;
+    margin: 0;
 }
 
-.low-stock {
-  color: #e74c3c;
-  font-weight: bold;
+/* Indicadores de Stock */
+.low-stock { 
+    color: #e74c3c; 
+    font-weight: bold;
 }
 
-.high-stock {
-  color: #27ae60;
-  font-weight: bold;
+.high-stock { 
+    color: #27ae60; 
+    font-weight: bold;
 }
 
 .empty-list-message {
-  text-align: center;
-  color: #7f8c8d;
-  margin-top: 30px;
-  font-size: 1em;
+    text-align: center;
+    color: #7f8c8d;
+    margin-top: 30px;
+    font-size: 1em;
 }
 
-/* === MODAL DE GESTIÓN === */
+/* === MODAL DE GESTIÓN (Formulario) === */
+
 .modal-content {
-  --background: #ffffff;
+    --background: #ffffff;
 }
 
 .modal-title {
-  color: #34495e;
-  font-size: 1.6em;
-  font-weight: 500;
-  margin-bottom: 20px;
-  text-align: center;
+    color: #34495e;
+    font-size: 1.6em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
+/* Estilos para asegurar que las etiquetas e inputs sean visibles y elegantes */
 .modal-content ion-item.input-item {
-  --background: transparent;
-  --padding-start: 0;
-  --inner-padding-end: 0;
-  margin-bottom: 20px;
+    --background: transparent;
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    margin-bottom: 20px;
 }
 
 .modal-content ion-item.input-item ion-label {
-  color: #7f8c8d;
-  font-size: 14px;
+    color: #7f8c8d;
+    font-size: 14px;
 }
 
 .modal-content ion-item.input-item ion-input {
-  color: #34495e;
-  font-size: 16px;
-  border-bottom: 2px solid #bdc3c7;
-  transition: border-color 0.3s;
+    color: #34495e;
+    font-size: 16px;
+    border-bottom: 2px solid #bdc3c7;
+    transition: border-color 0.3s;
 }
 
 .modal-content ion-item.input-item ion-input:focus {
-  border-bottom-color: #3498db;
+    border-bottom-color: #3498db;
 }
 
 .stock-management-area {
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px solid #f0f0f0;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
 }
 
 .stock-subtitle {
-  color: #34495e;
-  font-weight: 500;
-  font-size: 1.1em;
-  margin-bottom: 15px;
+    color: #34495e;
+    font-weight: 500;
+    font-size: 1.1em;
+    margin-bottom: 15px;
 }
 
 
