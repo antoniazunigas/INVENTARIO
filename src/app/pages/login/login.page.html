@@ -6,23 +6,24 @@
       
       <ion-item lines="none"> 
         <ion-label position="floating">Usuario</ion-label>
-        <ion-input [(ngModel)]="usuario" type="text"></ion-input>
+        <ion-input id="input-usuario" [(ngModel)]="usuario" type="text"></ion-input>
       </ion-item>
       
       <ion-item lines="none">
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="password"></ion-input>
+        <ion-input id="input-password" type="password" [(ngModel)]="password"></ion-input>
       </ion-item>
       
-      <ion-button expand="block" (click)="login()">
+      <ion-button id="btn-login" expand="block" (click)="login()">
         INGRESAR
       </ion-button>
       
-      <ion-button expand="block" fill="outline" routerLink="/registro">
+      <ion-button id="btn-registro" expand="block" fill="outline" routerLink="/registro">
         REGISTRARSE
-      </ion-button>>
+      </ion-button>
 
     </div>
   </div>
 </ion-content>
+
 
