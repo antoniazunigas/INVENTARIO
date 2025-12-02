@@ -1,0 +1,6 @@
+projectKey=inventario-angular
+serverUrl=http://localhost:9000
+serverVersion=25.11.0.114957
+dashboardUrl=http://localhost:9000/dashboard?id=inventario-angular
+ceTaskId=7b213bac-d0bb-46fc-a2a4-4ff6e01787b3
+ceTaskUrl=http://localhost:9000/api/ce/task?id=7b213bac-d0bb-46fc-a2a4-4ff6e01787b3

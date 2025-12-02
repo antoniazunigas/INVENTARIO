@@ -1,0 +1,112 @@
+/* register.page.css - SOLUCIÓN DEFINITIVA DE CENTRADO Y VISIBILIDAD */
+
+:host {
+  /* Fondo consistente: Degradado sutil de azul oscuro a marino */
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  /* CLAVE: Añadimos display: flex para que el centrado del host funcione
+     incluso si el ion-content falla.
+  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-content {
+  /* Forzamos al ion-content a ser transparente y no interferir */
+  --background: transparent; 
+  /* CLAVE: Quitamos el display: flex de aquí para evitar conflictos con el :host,
+     pero nos aseguramos de que el contenido interno se centre.
+  */
+  display: block;
+}
+
+.register-container {
+  /* La Tarjeta: Apariencia, Sombra y Tamaño */
+  background: #ffffff; /* Blanco puro */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+  width: 380px; 
+  max-width: 90%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  
+  /* CLAVE: Usamos margin: auto para que el elemento se centre dentro de su padre 
+     (que ahora es el :host centrado)
+  */
+  margin: 0 auto; 
+}
+
+.register-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.register-container h1 {
+  color: #34495e; 
+  margin-bottom: 30px;
+  font-weight: 300; 
+  font-size: 28px;
+}
+
+/* --- Estilos de Inputs (Visibilidad Corregida) --- */
+
+ion-item {
+  /* Asegura que el ion-item sea transparente */
+  --background: transparent; 
+  --border-color: #f0f0f0; 
+  --padding-start: 0;
+  margin-bottom: 20px;
+}
+
+ion-input {
+  /* El color del texto ingresado */
+  color: #34495e;
+  font-size: 16px;
+  border-bottom: 2px solid #bdc3c7; 
+  transition: border-bottom-color 0.3s;
+}
+
+/* CLAVE: Aseguramos que la etiqueta (Usuario/Contraseña) tenga un color oscuro */
+ion-label {
+  color: #7f8c8d; /* Gris suave, pero visible */
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* --- Resto de estilos de Botones (Mantener) --- */
+ion-button {
+  --background: #3498db; 
+  --color: #ffffff;
+  font-weight: 600;
+  height: 50px;
+  margin-top: 20px;
+  --border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4); 
+}
+
+ion-button[fill="outline"] {
+  --background: transparent;
+  --color: #7f8c8d; 
+  --border-color: #bdc3c7;
+  --border-width: 1px;
+  margin-top: 10px;
+  box-shadow: none;
+}
+
+.link-login {
+  color: #7f8c8d; 
+  margin-top: 30px;
+  font-size: 14px;
+  display: block;
+  text-decoration: none;
+}
+
+.link-login a {
+  color: #3498db;
+  font-weight: 500;
+  text-decoration: none;
+}
+

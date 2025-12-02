@@ -1,0 +1,26 @@
+<ion-content>
+  <div class="register-container">
+    
+    <h1>Crear Cuenta</h1>
+    
+    <ion-item lines="none"> 
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input [(ngModel)]="usuario" type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item lines="none">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    
+    <ion-button expand="block" (click)="registrar()">
+      REGISTRAR
+    </ion-button>
+    
+    <ion-button expand="block" fill="outline" routerLink="/login">
+      VOLVER AL LOGIN
+    </ion-button>
+
+  </div>
+</ion-content>
+

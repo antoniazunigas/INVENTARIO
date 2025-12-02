@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset name="Reglas Inventario Angular"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.github.io/pmd-6.55.0/ruleset_xml_schema.xsd">
+
+    <!-- Reglas recomendadas para proyectos Angular TypeScript -->
+    <description>Reglas de inspección para el sistema de inventario.</description>
+
+    <rule ref="category/typescript/bestpractices.xml"/>
+    <rule ref="category/typescript/codestyle.xml"/>
+    <rule ref="category/typescript/errorprone.xml"/>
+    <rule ref="category/typescript/design.xml"/>
+
+</ruleset>
